@@ -1,0 +1,78 @@
+.product-nav-page {
+    padding: 2rem;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+}
+
+.nav-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #2c3e50;
+}
+
+.nav-header .leaf-icon {
+    font-size: 2.5rem;
+    color: #27ae60;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.nav-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.nav-header p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Dark mode support */
+.dark-mode .product-nav-page {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.dark-mode .nav-header {
+    color: #ecf0f1;
+}
+
+.dark-mode .nav-header p {
+    color: #bdc3c7;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .product-nav-page {
+        padding: 1rem;
+    }
+
+    .nav-header h1 {
+        font-size: 2rem;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+} 
