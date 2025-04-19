@@ -1,0 +1,343 @@
+:root {
+  --eco-primary: #2ecc71;
+  --eco-secondary: #27ae60;
+  --eco-light: #e8f5e9;
+  --eco-accent: #a5d6a7;
+  --eco-text: #2c3e50;
+  --eco-success: #00b894;
+  --eco-warning: #fdcb6e;
+  --eco-danger: #ff7675;
+  --leaf-shadow: rgba(46, 204, 113, 0.2);
+}
+
+.settings-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.settings-container.dark-mode {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #ffffff;
+}
+
+.settings-container::before {
+  content: "🌿";
+  position: fixed;
+  font-size: 400px;
+  opacity: 0;
+  right: -100px;
+  bottom: -100px;
+  transform: rotate(-15deg);
+  z-index: 0;
+  animation: leafFloat 20s ease-in-out infinite;
+}
+
+.settings-container::after {
+  content: "🌱";
+  position: fixed;
+  font-size: 200px;
+  opacity: 0;
+  left: -50px;
+  top: -50px;
+  transform: rotate(15deg);
+  z-index: 0;
+  animation: seedGrow 15s ease-in-out infinite;
+}
+
+.settings-title {
+  color: #2c7a4d;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.leaf-icon {
+  color: #4CAF50;
+  animation: float 3s ease-in-out infinite;
+}
+
+.settings-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.settings-card:hover {
+  transform: translateY(-2px);
+}
+
+.settings-card h2 {
+  color: #2c7a4d;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.save-button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+  background: #388E3C;
+}
+
+.toggle-group {
+  margin-bottom: 1rem;
+}
+
+.toggle-group label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle {
+  width: 50px;
+  height: 26px;
+  background: #ddd;
+  border-radius: 13px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle.active {
+  background: #4CAF50;
+}
+
+.toggle-slider {
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+}
+
+.toggle.active .toggle-slider {
+  transform: translateX(24px);
+}
+
+.eco-stats {
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #4CAF50, #2c7a4d);
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stat-icon {
+  font-size: 2rem;
+}
+
+.stat-info {
+  flex: 1;
+}
+
+.stat-info h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.progress-bar {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  height: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.progress {
+  background: white;
+  border-radius: 10px;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.dark-mode .settings-card {
+  background: #2d2d2d;
+  color: #fff;
+}
+
+.dark-mode .form-group input {
+  background: #3d3d3d;
+  border-color: #4d4d4d;
+  color: #fff;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .settings-container {
+    padding: 15px;
+    margin: 1rem;
+  }
+  
+  .settings-card {
+    padding: 1rem;
+  }
+}
+
+/* New Animations */
+@keyframes natureFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes leafFloat {
+  0% {
+    opacity: 0.02;
+    transform: rotate(-15deg) translateY(0);
+  }
+  50% {
+    opacity: 0.05;
+    transform: rotate(-10deg) translateY(-20px);
+  }
+  100% {
+    opacity: 0.02;
+    transform: rotate(-15deg) translateY(0);
+  }
+}
+
+@keyframes seedGrow {
+  0% {
+    opacity: 0.02;
+    transform: rotate(15deg) scale(0.95);
+  }
+  50% {
+    opacity: 0.04;
+    transform: rotate(20deg) scale(1);
+  }
+  100% {
+    opacity: 0.02;
+    transform: rotate(15deg) scale(0.95);
+  }
+}
+
+@keyframes growLine {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes toastPopup {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.message-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    animation: toastPopup 0.3s ease forwards;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.message-toast.success {
+    background: linear-gradient(135deg, var(--eco-success), var(--eco-secondary));
+}
+
+.message-toast.error {
+    background: linear-gradient(135deg, var(--eco-danger), #e74c3c);
+}
+
+.message-toast svg {
+    font-size: 1.2rem;
+} 

@@ -1,0 +1,454 @@
+:root {
+  --eco-primary: #2ecc71;
+  --eco-secondary: #27ae60;
+  --eco-light: #e8f5e9;
+  --eco-accent: #a5d6a7;
+  --eco-text: #2c3e50;
+  --eco-success: #00b894;
+  --eco-warning: #fdcb6e;
+  --eco-danger: #ff7675;
+}
+
+/* Container styles */
+.tasks-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--eco-light) 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.tasks-container::before {
+  content: "♻️";
+  position: fixed;
+  font-size: 400px;
+  opacity: 0.03;
+  right: -100px;
+  bottom: -100px;
+  transform: rotate(-15deg);
+  z-index: 0;
+}
+
+/* Card styles */
+.task-card {
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+  margin-bottom: 1rem;
+  animation: slideIn 0.3s ease-out forwards;
+  border-left: 4px solid var(--eco-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.task-card::after {
+  content: "🌱";
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  font-size: 20px;
+  opacity: 0.1;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(46, 204, 113, 0.1);
+}
+
+/* Header section styles */
+.header-section {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 15px rgba(46, 204, 113, 0.1);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-section::after {
+  content: "🌿";
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 24px;
+  opacity: 0.2;
+}
+
+.header-section h1 {
+  color: var(--eco-text);
+  font-weight: 600;
+}
+
+/* Progress bar styles */
+.progress {
+  background-color: var(--eco-light);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 20px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  background: linear-gradient(45deg, var(--eco-primary), var(--eco-secondary));
+  transition: width 0.6s ease;
+  position: relative;
+}
+
+/* Filter section styles */
+.filters-section {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 15px rgba(46, 204, 113, 0.1);
+  margin-bottom: 2rem;
+}
+
+.filters-section .input-group {
+  box-shadow: 0 2px 4px rgba(46, 204, 113, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.filters-section .input-group-text {
+  background-color: #ffffff;
+  border: 1px solid var(--eco-accent);
+  border-right: none;
+  color: var(--eco-primary);
+}
+
+.filters-section .form-control,
+.filters-section .form-select {
+  border: 1px solid var(--eco-accent);
+  border-left: none;
+  color: var(--eco-text);
+}
+
+.filters-section .form-control:focus,
+.filters-section .form-select:focus {
+  box-shadow: none;
+  border-color: var(--eco-primary);
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(45deg, var(--eco-primary), var(--eco-secondary));
+  border: none;
+  box-shadow: 0 2px 4px rgba(46, 204, 113, 0.2);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, var(--eco-secondary), var(--eco-primary));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(46, 204, 113, 0.3);
+}
+
+.btn-outline-primary {
+  color: var(--eco-primary);
+  border-color: var(--eco-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--eco-primary);
+  border-color: var(--eco-primary);
+}
+
+/* Badge styles */
+.badge {
+  padding: 0.5em 0.8em;
+  font-weight: 500;
+  font-size: 0.75rem;
+  border-radius: 6px;
+}
+
+.badge.bg-success {
+  background-color: var(--eco-success) !important;
+}
+
+.badge.bg-warning {
+  background-color: var(--eco-warning) !important;
+  color: #000;
+}
+
+.badge.bg-danger {
+  background-color: var(--eco-danger) !important;
+}
+
+/* Modal styles */
+.modal-content {
+  border: none;
+  box-shadow: 0 10px 30px rgba(46, 204, 113, 0.15);
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.modal-header {
+  border-bottom: 2px solid var(--eco-light);
+  padding: 1.5rem;
+  background-color: #ffffff;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-footer {
+  border-top: 2px solid var(--eco-light);
+  padding: 1rem 1.5rem;
+}
+
+/* Custom scrollbar */
+.tasks-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tasks-list::-webkit-scrollbar-track {
+  background: var(--eco-light);
+  border-radius: 3px;
+}
+
+.tasks-list::-webkit-scrollbar-thumb {
+  background: var(--eco-accent);
+  border-radius: 3px;
+}
+
+.tasks-list::-webkit-scrollbar-thumb:hover {
+  background: var(--eco-primary);
+}
+
+/* Animation keyframes */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .task-card .row {
+    flex-direction: column;
+  }
+  
+  .task-card .col-md-6,
+  .task-card .col-md-4,
+  .task-card .col-md-2 {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .task-card .d-flex.justify-content-end {
+    justify-content: flex-start !important;
+  }
+  
+  .filters-section .col-md-4 {
+    margin-bottom: 1rem;
+  }
+
+  .header-section {
+    padding: 1.5rem;
+  }
+
+  .tasks-list {
+    max-height: calc(100vh - 250px);
+  }
+}
+
+/* Task priority indicators */
+.task-card[data-priority="High"] {
+  border-left-color: var(--eco-danger);
+}
+
+.task-card[data-priority="Medium"] {
+  border-left-color: var(--eco-warning);
+}
+
+.task-card[data-priority="Low"] {
+  border-left-color: var(--eco-success);
+}
+
+/* Eco-friendly status badges */
+.eco-status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+}
+
+/* Form styling */
+.form-control, .form-select {
+  border-radius: 8px;
+  border: 1px solid var(--eco-accent);
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--eco-primary);
+  box-shadow: 0 0 0 0.2rem rgba(46, 204, 113, 0.25);
+}
+
+.form-label {
+  color: var(--eco-text);
+  font-weight: 500;
+}
+
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.btn svg {
+  width: 1em;
+  height: 1em;
+}
+
+.badge.bg-primary {
+  background-color: #0d6efd !important;
+}
+
+.badge.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+.tasks-list {
+  max-height: calc(100vh - 300px);
+  overflow-y: auto;
+  padding-right: 5px;
+  margin-top: 1rem;
+}
+
+/* Priority and Status Colors */
+.badge.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.badge.bg-warning {
+  background-color: #ffc107 !important;
+  color: #000;
+}
+
+.badge.bg-success {
+  background-color: #28a745 !important;
+}
+
+.badge.bg-primary {
+  background-color: #0d6efd !important;
+}
+
+.badge.bg-secondary {
+  background-color: #6c757d !important;
+}
+
+/* Animation keyframes */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+/* Modal animations */
+.modal.show {
+  display: block;
+}
+
+.modal-dialog {
+  margin: 1.75rem auto;
+}
+
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+} 
